@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    box-sizing: border-box;
+    font-family: "";
+  }
+  
+nav {
+    padding: 0px;
+    background: #F3CECF;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    /* height: 70px; */
+    z-index: 2;
+    display: flex;
+  }
+
+  .logo{
+    padding: 10px;
+  }
+
+  .title, .logo{
+    /* border: 2px solid red; */
+    /* width: fit-content; */
+    display: flex;
+    justify-content: center;
+  }
+
+  .title{
+    font-family: 'Encode Sans SC', sans-serif;
+    color: #dd8989;
+  }
+
+  nav ul {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+    /* flex-wrap: wrap; */
+    /* align-items: center; */
+    justify-content: center;
+    font-family: "Gilroy";
+  }
+  
+  nav li {
+    /* border: 2px solid red; */
+    /* padding-top: 15px; */
+    display: inline-block;
+    /* line-height: 56px; */
+    margin: 0 15px;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Encode Sans SC', sans-serif;
+    color: #dd8989;
+  }
+  
+  body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #99D8DC;
+    background-image: url(../assets/svg/background.svg);
+    background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  background-position: center center;
+  align-items: center;
+  z-index: 0;
+  }
+
+  .btn {
+    display: none;
+    padding: 0px 10px 0px 20px;
+    position: relative;
+    margin-top: 15px;
+    margin-right: 20px;
+    align-items: center;
+    float: right;
+  }
+
+  
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background: #ffff;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .open{
+    background-color: #F3CECF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 200px 100px 200px 100px; */
+    width: 60vw;
+    border-radius: 20px;
+    box-shadow: 8px 8px #ffff;
+  }
+
+  .open h1{
+    font-family: 'Encode Sans SC', sans-serif;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 22%;
+    font-size: 80px;
+    color: #dd8989;
+    /* font-size: 30px; */
+  }
+
+  .profileSN,
+.aboutSN ,
+.logoutSN {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "Gilroy Dark";
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.profileSN:hover,
+.aboutSN:hover ,
+.logoutSN:hover {
+  color: #f1f1f1;
+}
+
+@media (min-width:0px) and (max-width: 873px){
+  .open h1{
+    font-size: 50px;
+  }
+}
+
+@media (min-width:0px) and (max-width:451px){
+  nav li{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
