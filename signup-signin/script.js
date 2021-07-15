@@ -10,7 +10,7 @@ signInButton.addEventListener('click', () => {
 });
 
 // const url = 'https://kinoticket.herokuapp.com';
-const url = 'http://localhost:8000';
+const url = "http://localhost:8000";
 let Name = document.querySelector(".form_input").children[0];
 let Email = document.querySelector(".form_input").children[1];
 // let Contact = document.querySelector(".form_input").children[2];
@@ -30,29 +30,29 @@ let status = 0;
 
 
 // ------------------------------------ navbar 1 --------------------------------------------------------
-const token = localStorage.getItem("jwt");
+// const token = localStorage.getItem("jwt");
 
-if (token) {
-    fetch(`${url}/verify_login`, {
-      method: "GET",
-      headers: {
-        authorization: token,
-      },
-    }).then((res) => {
-        console.log(res)
-        if(res.status == 200)
-        {
-            let signin = document.getElementById("signin_link");
-            let hamburger_signin = document.getElementById("hamburger_signin");
-            let user_logo = document.getElementById("user_logo");
-            let hamburger_after_login = document.getElementById("hamburger_after_login");
-            signin.style.display = "none";
-            hamburger_signin.style.display = "none";
-            user_logo.style.display = "block";
-            hamburger_after_login.style.display = "block"
-        }
-    })
-}
+// if (token) {
+//     fetch(`${url}/verify_login`, {
+//       method: "GET",
+//       headers: {
+//         authorization: token,
+//       },
+//     }).then((res) => {
+//         console.log(res)
+//         if(res.status == 200)
+//         {
+//             let signin = document.getElementById("signin_link");
+//             let hamburger_signin = document.getElementById("hamburger_signin");
+//             let user_logo = document.getElementById("user_logo");
+//             let hamburger_after_login = document.getElementById("hamburger_after_login");
+//             signin.style.display = "none";
+//             hamburger_signin.style.display = "none";
+//             user_logo.style.display = "block";
+//             hamburger_after_login.style.display = "block"
+//         }
+//     })
+// }
 // --------------------------------------- navbar 1 end -------------------------------------------------
 
 Name.addEventListener("change",(event) => {
@@ -63,9 +63,9 @@ Email.addEventListener("change",(event) => {
 Email_value = event.target.value;
 });
  
-Contact.addEventListener("change",(event) => {
-Contact_value = event.target.value;
-});
+// Contact.addEventListener("change",(event) => {
+// Contact_value = event.target.value;
+// });
  
 Password.addEventListener("change",(event) => {
 Password_value = event.target.value;
@@ -83,11 +83,11 @@ Password_reenter_value = event.target.value;
     //  Contact.classList.remove("wrong");
      Password.classList.remove("wrong");
      Password_reenter.classList.remove("wrong");
-     warning.style.display = "none";
+    //  warning.style.display = "none";
      if(Name_value == "")
      {
-          warning.innerHTML = '<h1>Enter Your Name</h1>';
-          warning.style.display = "block";
+        //   warning.innerHTML = '<h1>Enter Your Name</h1>';
+        //   warning.style.display = "block";
           Name.classList.add("wrong");
           return;
      }
@@ -134,12 +134,13 @@ Password_reenter_value = event.target.value;
          password : Password_value,
         //  contact : Contact_value
      }
-     fetch(`${url}/auth/signUp`,{
+     fetch(`${url}/auth/signup`,{
         method : "POST",
-        body: JSON.stringify(obj),
-        headers : {
-             "Content-Type" : "application/json"
-        }
+        
+        headers: {
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify(obj),
     }).then((res) => {
         status = res.status;
         return res.json();
@@ -147,14 +148,14 @@ Password_reenter_value = event.target.value;
         // console.log(data)
         if(status!=200)
         {
-            warning.innerHTML = `<h1>${data.error}</h1>`;
-            warning.style.display = "block";
+            // warning.innerHTML = `<h1>${data.error}</h1>`;
+            // warning.style.display = "block";
         }
         else
         {
             const { token } = data;
             localStorage.setItem("jwt", token);
-            location.href = `../myFirsPeriod/myFirstPeriod.html`
+            location.href = `../myFirstPeriod/myFirstPeriod.html`
         }
     })
  })
