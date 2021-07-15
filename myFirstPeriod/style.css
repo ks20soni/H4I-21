@@ -122,19 +122,6 @@ nav {
     margin-left: 50px;
   }
 
-  .open{
-    background-color: rgba(243, 206, 207,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 200px 100px 200px 100px; */
-    width: 60vw;
-    border-radius: 20px;
-    box-shadow: 8px 8px #ffff;
-    animation: skew 3s infinite;
-  transform: skew(20deg);
-  animation-direction: alternate;
-  }
 
   @keyframes skew {
     0% {
@@ -176,7 +163,8 @@ nav {
 
 
 .card-main {
-   min-width: 65%;
+   width: 65%;
+   margin-left: 90px;
   height: auto;
   background-color: #dad8d8;
   border-radius: 20px;
