@@ -173,7 +173,8 @@ body {
 }
 
 .card-main {
-  min-width: 65%;
+  width: 65%;
+  margin-left: 90px;
   height: auto;
   background-color: #dad8d8;
   border-radius: 20px;
